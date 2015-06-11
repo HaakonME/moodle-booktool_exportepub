@@ -1,0 +1,22 @@
+body {
+    font-family: "DejaVu", "Bitstream Vera", serif;
+}
+
+.book_chapter_title {
+}
+
+a {
+    text-decoration: none;
+}
+
+a:link {
+    color: #703090;
+}
+
+a:visited {
+    color: #900000;
+}
+
+a:hover {
+    color: #f00000;
+}
