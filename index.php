@@ -177,7 +177,7 @@ foreach ($chapters as $cid => $ch) {
         }
     }
 
-    $epub->add_spine_item($epub->get_html_wrap($text, $title, 'luci.css'),
+    $epub->add_spine_item($epub->get_html_wrap($text, $title, 'luci.css', FALSE, "xmlns:epub='http://www.idpf.org/2007/ops'"),
                           'chap' . $ch->id . '.html');
     $epub->set_item_toc(null, true, !$first);
     $first = false;

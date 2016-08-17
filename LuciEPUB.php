@@ -2,7 +2,7 @@
 
   /*
     LuciEPUB - EPUB generator
-    Copyright © 2012-2014  Mikael Ylikoski
+    Copyright © 2012-2015  Mikael Ylikoski
 
     This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU Affero General Public License as
@@ -295,7 +295,7 @@ class LuciEPUB {
 		$i = 1;
 	    else
 		$i++;
-	} while (array_value_exists($name, $this->extra));
+	} while (in_array($name, $this->extra));
 
 	$this->extra[$path] = $name;
     }
@@ -802,8 +802,8 @@ class LuciEPUB {
 	return "</body>\n</html>";
     }
 
-    public static function get_html_wrap($content, $title, $style = FALSE, $bodyclass = FALSE) {
-	return self::get_html_head($title, $style, $bodyclass) . $content . self::get_html_end();
+    public static function get_html_wrap($content, $title, $style = FALSE, $bodyclass = FALSE, $namespaces = '') {
+	return self::get_html_head($title, $style, $bodyclass, $namespaces) . $content . self::get_html_end();
     }
 
     public static function get_html_cover($title, $subtitle = NULL, $bottom = NULL, $image = NULL, $style = NULL) {
